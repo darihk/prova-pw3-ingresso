@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface SessaoRepository extends JpaRepository<Sessao, Integer> {
 
-    List<Sessao> sessaoById();
+    List<Sessao> findByFilmeId(Long id);
 
 }

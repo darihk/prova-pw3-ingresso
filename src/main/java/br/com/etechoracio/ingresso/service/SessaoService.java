@@ -19,8 +19,9 @@ public class SessaoService {
     @Autowired
     private SessaoMapper sessaoMapper;
 
-    public List<SessaoResponseDTO> sessaoById(Filme id){
-        var sessoes = sessaoRepository.sessaoById();
+    public List<SessaoResponseDTO> sessoesById(Long id){
+        var sessoes = sessaoRepository.findByFilmeId(id);
+        return sessaoMapper.toResponseDTOList(sessoes);
     }
 
 }

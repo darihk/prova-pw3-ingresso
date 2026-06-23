@@ -29,4 +29,9 @@ public class FilmeService {
         return filmeMapper.toResponseDTOList(filmes);
     }
 
+    public FilmeResponseDTO findById(Long id){
+        var filme = filmeRepository.findById(id);
+        return filmeMapper.toResponseDTO(filme.get());
+    }
+
 }
